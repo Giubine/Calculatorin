@@ -15,7 +15,7 @@ class Calculator @Inject constructor() {
     }
 
     private fun evaluateExpression(expression: String): Double {
-        val tokens = expression.split(" ")
+        val tokens = expression.split(" ").filter { it.isNotBlank() }
         if (tokens.isEmpty()) return 0.0
 
         var result = tokens[0].toDouble()
